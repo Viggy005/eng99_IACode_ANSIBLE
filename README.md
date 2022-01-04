@@ -1,6 +1,6 @@
 # Infrastructure as Code (IaC)
 
-![](pics/vagrant_3vm.png)
+![](pics/Vagrant_3VM.png)
 
 # # Run vagrant
 - to create 3 VM's 
