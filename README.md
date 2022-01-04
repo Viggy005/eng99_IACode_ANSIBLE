@@ -126,11 +126,13 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
     ![](pics/provision_controller.png)
 - edit the /etc/ansible/hosts file
     ![](pics/hosts_file.png)
-- ssh into the db and app and exit
+- ssh into the db and app and exit(not required if we got the key in provision script)
 
 - now we can run Adhoc commands on the web and Db VM's from our controller VM
 
 ## Adhoc Commands: we run them from controller VM ; it responds with information from the agent
+- Ad-hoc commands are one of the simplest ways of using Ansible. These are used when you want to issue some commands on a server or bunch of servers. The ad-hoc commands are not stored for future use, but it represents a fast way to interact with the desired servers.
+## Some Adhoc commands used:
 - ansible all -m ping
 - ansible web -m ping
 - ansible db -m ping
