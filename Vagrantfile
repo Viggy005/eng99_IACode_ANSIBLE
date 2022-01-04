@@ -15,7 +15,7 @@
        
        controller.vm.hostname = 'controller'
        
-       controller.vm.network :private_network, ip: "192.168.33.12"
+       controller.vm.network :private_network, ip: "192.168.56.12"
        
        # config.hostsupdater.aliases = ["development.controller"] 
        
@@ -29,7 +29,7 @@
         web.vm.hostname = 'web'
         # assigning host name to the VM
         
-        web.vm.network :private_network, ip: "192.168.33.10"
+        web.vm.network :private_network, ip: "192.168.56.10"
         #   assigning private IP
         
         #config.hostsupdater.aliases = ["development.web"]
@@ -44,7 +44,7 @@
         
         db.vm.hostname = 'db'
         
-        db.vm.network :private_network, ip: "192.168.33.11"
+        db.vm.network :private_network, ip: "192.168.56.11"
         
         #config.hostsupdater.aliases = ["development.db"]     
       end
