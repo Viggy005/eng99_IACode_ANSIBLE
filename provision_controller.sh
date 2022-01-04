@@ -9,10 +9,12 @@ sudo rm -rf /etc/ansible/hosts
 
 touch /etc/ansible/hosts
 
-echo "# comments" >> /etc/ansible/hosts
+# echo "# comments" >> /etc/ansible/hosts
 
-echo "[web]" >> /etc/ansible/hosts
+# echo "[web]" >> /etc/ansible/hosts
 
-echo "192.168.56.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
-echo "[db]" >> /etc/ansible/hosts
-echo "192.168.56.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
+# echo "192.168.56.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
+# echo "[db]" >> /etc/ansible/hosts
+# echo "192.168.56.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
+# ssh-keyscan -H 192.168.56.10>>~/.ssh/known_hosts
+# ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
