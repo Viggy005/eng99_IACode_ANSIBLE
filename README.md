@@ -23,7 +23,8 @@
        controller.vm.hostname = 'controller'
        
        controller.vm.network :private_network, ip: "192.168.56.12"
-       
+  	controller.vm.synced_folder "./sendin", "/home/vagrant/controller"     
+
        # config.hostsupdater.aliases = ["development.controller"] 
        
       end 
@@ -58,6 +59,7 @@
     
     
     end
+
 ```
 
 ## provisioning File for the Controller VM
@@ -70,19 +72,16 @@ sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt-get update
 sudo apt-get install ansible -y
 
+# replace file  /etc/ansible/hosts
+
 sudo rm -rf /etc/ansible/hosts
 
-touch /etc/ansible/hosts
+sudo cp controller/hosts /etc/ansible/hosts
 
-# echo "# comments" >> /etc/ansible/hosts
+# to make sure we get the key, otherwise will have to ssh into agents first before running adhoc commands
+ssh-keyscan -H 192.168.56.10>>~/.ssh/known_hosts
+ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 
-# echo "[web]" >> /etc/ansible/hosts
-
-# echo "192.168.56.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
-# echo "[db]" >> /etc/ansible/hosts
-# echo "192.168.56.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant" >> /etc/ansible/hosts
-# ssh-keyscan -H 192.168.56.10>>~/.ssh/known_hosts
-# ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 ```
 
 ## content of /etc/ansible/hosts file
@@ -120,7 +119,10 @@ touch /etc/ansible/hosts
     3. vagrant ssh db
 
 ### Step 5: Setting up the Controller VM with Ansible
-- Run the provision script
+- we have included in the vagrant file the command to sync a folder from local host to VM:
+    - controller.vm.synced_folder "./sendin", "/home/vagrant/controller"
+- this synced folder contain the provisioing script and the new hosts file
+- Run the provision script (give chmod permission)
     ![](pics/provision_controller.png)
 - edit the /etc/ansible/hosts file
     ![](pics/hosts_file.png)
