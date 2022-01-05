@@ -172,7 +172,7 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 - copy app folder
 - npm install and then start
 - document these steps
-## manually ssh inot web and run the app
+## First iteration: manually ssh into web and run the app(npm install & npm start)
 Step 1: copy app folder into web using vagrant file
   ![](pics/playbooks/app/vagrantfile.png)
 - vagarant reload web
@@ -187,7 +187,9 @@ Step 2: Write the new yaml file (setup_app.yml)
   -     sudo nano setup_app.js
   ![](pics/playbooks/app/playbook.png)
 
-- Run the file(setup_app.yml) from controller
+- Check syntax and Run the file(setup_app.yml) from controller
+    1.ansible-playbook setup_app.yml --syntax-check
+    2.ansible-playbook setup_app.yml 
 - ssh into web server to start the app(npm install, npm start)
 
 
