@@ -134,6 +134,8 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 
 ## Adhoc Commands: we run them from controller VM ; it responds with information from the agent
 - Ad-hoc commands are one of the simplest ways of using Ansible. These are used when you want to issue some commands on a server or bunch of servers. The ad-hoc commands are not stored for future use, but it represents a fast way to interact with the desired servers.
+
+- To put simply, Ansible ad hoc commands are one-liner Linux shell commands and playbooks are like a shell script, a collective of many commands with logic. Ansible ad hoc commands come handy when you want to perform a quick task
 ## Some Adhoc commands used:
 - ansible all -m ping
 - ansible web -m ping
