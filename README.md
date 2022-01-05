@@ -177,12 +177,13 @@ Step 1: copy app folder into web using vagrant file
   ![](pics/playbooks/app/vagrantfile.png)
 - vagarant reload web
 
-Step 2: Write the new yaml file (setup_app.yml)
+Step 2: create a provision file to set up the web app
 - ssh into contoller
 - navigate to /etc/ansible
 - create a provision.sh to set up web app
   ![](pics/playbooks/app/provision_script.png)
-  
+Step 3: Write the new yaml file (setup_app.yml)  
+-  navigate to /etc/ansible
 - create a file setup_app.yml
   -     sudo nano setup_app.js
   ![](pics/playbooks/app/playbook.png)
