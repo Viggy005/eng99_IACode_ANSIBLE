@@ -153,5 +153,21 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 ![](pics/sparta.png)
 
 
+# Play Books:
+- define
+- define
+- playbook file (.yml file)
+  - create a file install_nginx.yml file
+    -     sudo nano install_nginx.yml
+![](pics/playbooks/nginx/playbook_nginx.png)
+- Run the playbook
+  -     ansible-playbook install_nginx.yml --syntax-check
+![](pics/playbooks/nginx/playbook_nginx_run.png)
+- check from controller if nginx in running on web
+![](pics/playbooks/nginx/playbook_nginx_check.png)
+
+
+
+
 
 
