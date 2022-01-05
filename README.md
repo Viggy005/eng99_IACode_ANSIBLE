@@ -193,6 +193,8 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
     2.ansible-playbook setup_app.yml 
 - ssh into web server to start the app(npm install, npm start)
 
+## Second iteration: no manual ssh
+
 
 
 
