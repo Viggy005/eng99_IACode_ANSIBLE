@@ -173,16 +173,16 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 - npm install and then start
 - document these steps
 ## First iteration: manually ssh into web and run the app(npm install & npm start)
-Step 1: copy app folder into web using vagrant file
+### Step 1: copy app folder into web using vagrant file
   ![](pics/playbooks/app/vagrantfile.png)
 - vagarant reload web
 
-Step 2: create a provision file to set up the web app
+### Step 2: create a provision file to set up the web app
 - ssh into contoller
 - navigate to /etc/ansible
 - create a provision.sh to set up web app
   ![](pics/playbooks/app/provision_script.png)
-Step 3: Write the new yaml file (setup_app.yml)  
+### Step 3: Write the new yaml file (setup_app.yml)  
 -  navigate to /etc/ansible
 - create a file setup_app.yml
   -     sudo nano setup_app.js
