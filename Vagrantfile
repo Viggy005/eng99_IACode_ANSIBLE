@@ -31,6 +31,7 @@
         # assigning host name to the VM
         
         web.vm.network :private_network, ip: "192.168.56.10"
+	web.vm.synced_folder "./app", "/home/vagrant/app"
         #   assigning private IP
         
         #config.hostsupdater.aliases = ["development.web"]

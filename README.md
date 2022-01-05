@@ -148,7 +148,7 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
     - this shows the directory structure of the db
     
 
-# Reference notes
+# Reference notes Day 1
 
 ![](pics/sparta.png)
 
@@ -165,6 +165,30 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 ![](pics/playbooks/nginx/playbook_nginx_run.png)
 - check from controller if nginx in running on web
 ![](pics/playbooks/nginx/playbook_nginx_check.png)
+
+
+# task 1
+- create a playbook to install node in web
+- copy app folder
+- npm install and then start
+- document these steps
+## manually ssh inot web and run the app
+Step 1: copy app folder into web using vagrant file
+  ![](pics/playbooks/app/vagrantfile.png)
+- vagarant reload web
+
+Step 2: Write the new yaml file (setup_app.yml)
+- ssh into contoller
+- navigate to /etc/ansible
+- create a provision.sh to set up web app
+  ![](pics/playbooks/app/provision_script.png)
+  
+- create a file setup_app.yml
+  -     sudo nano setup_app.js
+  ![](pics/playbooks/app/playbook.png)
+
+- Run the file(setup_app.yml) from controller
+- ssh into web server to start the app(npm install, npm start)
 
 
 
