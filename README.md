@@ -154,8 +154,8 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 
 
 # Play Books:
-- define
-- define
+- An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible is a configuration management tool that automates the configuration of multiple servers by the use of Ansible playbooks.
+- Ansible playbooks are executed on a set, group, or classification of hosts, which together make up an Ansible inventory
 - playbook file (.yml file)
   - create a file install_nginx.yml file
     -     sudo nano install_nginx.yml
