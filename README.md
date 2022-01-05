@@ -127,6 +127,8 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 - edit the /etc/ansible/hosts file
     ![](pics/hosts_file.png)
 - ssh into the db and app and exit(not required if we got the key in provision script)
+    1. DB:  "ssh vagrant@192.168.56.11" 
+    1. web:  "ssh vagrant@192.168.56.10"
 
 - now we can run Adhoc commands on the web and Db VM's from our controller VM
 
