@@ -225,7 +225,7 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 - cd back to app
 - pm2 start app.js
 
-# task 3: execute 1 playbook to set up the application
+# task 3: execute 1 playbook to set up the application (app need manual starting: npm install, node seeds/seed.js,pm2 start app.js)
 
 - vagrant up 2 VM's(app, db)
 - ssh into contoller
