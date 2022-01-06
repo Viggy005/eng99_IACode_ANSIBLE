@@ -250,6 +250,7 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 
 - Install nginx playbook
 ![](pics/files_in_controller/nginx_playbook.png)
+  - nginx is restarted and enabled in the provision script to make chnages to /etc/nginx/sites-available/default work (reverse proxy)
 
 - APP playbook
 ![](pics/files_in_controller/app_playbook.png)
