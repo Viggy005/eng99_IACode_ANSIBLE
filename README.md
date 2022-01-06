@@ -234,6 +234,12 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
   - ssh-keyscan -H 192.168.56.21>>~/.ssh/known_hosts
 
 - run the main_playbook
+    ![](pics/files_in_controller/run_main_playbook.png)
+
+- manually start the app
+  - ssh into web vm
+    ![](pics/files_in_controller/ssh_app_start.png)
+
 
 ## files on the /etc/ansible location of the conroller
 
@@ -258,7 +264,12 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 
 ![](pics/files_in_controller/provision_app.png)
 
-- 
+- mongodb.conf (needs to be sent into db vm)
+  - sent to location /etc/mongodb.conf
+  ![](pics/files_in_controller/mongodb_conf_bindip.png)
+  - after file change mongdb has to be restarted it is written into playbook
+
+
 
 
 
