@@ -251,9 +251,6 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 - DB playbook
 ![](pics/files_in_controller/playbook_db.png)
 
-- main playbook
-![](pics/files_in_controller/main_playbook.png)
-
 - default: reverse proxy file (to be sent into web app)
 ![](pics/files_in_controller/reverse_proxy_default.png)
 
