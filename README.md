@@ -196,6 +196,73 @@ ssh-keyscan -H 192.168.56.11>>~/.ssh/known_hosts
 ## Second iteration: no manual ssh
 
 
+# Task 2: setup database from controller, install mongodb
+
+
+- ssh into controller
+- naviagte to /etc/ansible
+- create file called setup_db.yml
+![](pics/playbooks/db/playbook.png)
+- run the file
+![](pics/playbooks/db/run_check.png)
+
+- check if mongodb is running on db from controller
+![](pics/playbooks/db/run_check.png)
+
+- ssh into database and edit the mongodb.conf file
+    1. sudo nano /etc/mongodb.conf
+    2. edit bind ip to 0.0.0.0
+    3. restart mongodb
+    4. enable mongodb
+
+- ssh into web app 
+- edit .bashrc file
+- source .bashrc file
+- cd app
+- npm install
+- cd seed
+- node seed.js
+- cd back to app
+- pm2 start app.js
+
+# task 3: execute 1 playbook to set up the application
+
+- vagrant up 2 VM's(app, db)
+- ssh into contoller
+- generate key for both VM's using command
+  - ssh-keyscan -H 192.168.56.20>>~/.ssh/known_hosts
+  - ssh-keyscan -H 192.168.56.21>>~/.ssh/known_hosts
+
+- run the main_playbook
+
+## files on the /etc/ansible location of the conroller
+
+- Hosts File: where we enter the details of machines we want to control
+![](pics/files_in_controller/hosts.png)
+- main playbook
+![](pics/files_in_controller/main_playbook.png)
+
+- Install nginx playbook
+![](pics/files_in_controller/nginx_playbook.png)
+
+- APP playbook
+![](pics/files_in_controller/app_playbook.png)
+
+- DB playbook
+![](pics/files_in_controller/playbook_db.png)
+
+- main playbook
+![](pics/files_in_controller/main_playbook.png)
+
+- default: reverse proxy file (to be sent into web app)
+![](pics/files_in_controller/reverse_proxy_default.png)
+
+- provision script for web app(invoked in app playbook)
+
+![](pics/files_in_controller/provision_app.png)
+
+- 
+
 
 
 

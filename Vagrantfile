@@ -51,5 +51,49 @@
         #config.hostsupdater.aliases = ["development.db"]     
       end
     
+    # creating first VM called webo  
+      config.vm.define "webo" do |webo|
+        
+        webo.vm.box = "bento/ubuntu-18.04"
+       # downloading ubuntu 18.04 image
     
+        webo.vm.hostname = 'webo'
+        # assigning host name to the VM
+        
+        webo.vm.network :private_network, ip: "192.168.56.13"
+	webo.vm.synced_folder "./app", "/home/vagrant/app"
+        #   assigning private IP
+        
+        #config.hostsupdater.aliases = ["development.webo"]
+        # creating a link called development.web so we can access web page with this link instread of an IP   
+            
+      end
+	# creating first VM called weboo  
+      config.vm.define "weboo" do |weboo|
+        
+        weboo.vm.box = "bento/ubuntu-18.04"
+       # downloading ubuntu 18.04 image
+    
+        weboo.vm.hostname = 'weboo'
+        # assigning host name to the VM
+        
+        weboo.vm.network :private_network, ip: "192.168.56.21"
+	weboo.vm.synced_folder "./app", "/home/vagrant/app"
+        #   assigning private IP
+        
+        #config.hostsupdater.aliases = ["development.weboo"]
+        # creating a link called development.web so we can access web page with this link instread of an IP   
+            
+      end
+	# creating second VM called dbo
+      config.vm.define "dbo" do |dbo|
+        
+        dbo.vm.box = "bento/ubuntu-18.04"
+        
+        dbo.vm.hostname = 'dbo'
+        
+        dbo.vm.network :private_network, ip: "192.168.56.20"
+        
+        #config.hostsupdater.aliases = ["development.dbo"]     
+      end
     end
